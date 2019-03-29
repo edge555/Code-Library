@@ -1,0 +1,17 @@
+Finding substring:
+If(mainstr.find(substr)!=string::npos) - found
+
+Palindrome check:
+if (str==string(str.rbegin(),str.rend())) - palindrome
+
+str.push_back(char)/+=
+str.pop_back();
+str.substr(start index,length)
+str.erase(start index,length)
+str.resize(x) – resize the string to size x
+str.replace(x,y,str2) – x : begin index, y=end index, str2-string to replace 
+str.find(string) - Searches the string for the first occurrence of the substring specified in arguments. It returns the position of the first occurrence of substring.
+str.find_first_of(string) - Searches the string for the first character that matches any of the characters specified in its arguments. It returns the position of the first character that matches.
+str.find_last_of(string) - Searches the string for the last character that matches any of the characters specified in its arguments. It returns the position of the last character that matches.
+str.rfind(string) - Searches the string for the last occurrence of the substring specified in arguments. It returns the position of the last occurrence of substring
+str.insert(pos_to_begin,string_to_insert): This function inserts the given substring in the string. It takes two arguments, first the position from which you want to insert the substring and second the substring.

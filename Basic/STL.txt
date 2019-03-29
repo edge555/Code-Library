@@ -1,0 +1,125 @@
+VECTOR
+vector<int>vec;
+vector<int>vec(n,value); ------ vector will have n amount value
+vector<int>vec{10,20,30};
+
+vec.push_back(a)  ---- pushing a at the end of vector
+vec.pop_back() ------- removing last elemnt.
+vec.size() --------------- returns the size of the vector
+
+vector<int>::iterator it;
+it ------------------------- a pointer to vector elements
+it=vec.begin() --------- iterator pointing to vector’s first element
+it=vec.end() ----------- iterator pointing to vector’s end
+
+vector<int>::reverse_iterator it;
+it=vec.rbegin() ------- iterator pointing to vector’s reversly first (last) element
+it=vec.rend() --------- iterator pointing to vector’s reversly last (first) element
+
+vec.front() ------------ returns vector’s first element
+vec.back() ------------ returns vector’s last element
+vec.clear() ------------ all elements are removed
+
+vec.insert(it,x) ------ inserting x before iterator’s position
+vec.erase(it) --------- removes the element where iterator is pointing
+			
+vec.erase(it1,it2) --- removes the elements between it1 and it2 (inclusive)
+vec.empty() -------- return true is vector is empty else returns false
+
+it=find(vec.begin(),vec.end(),x)
+if (it!=vec.end()) x found, else x not found
+
+if(binary_search(vec.begin(),vec.end(),x)==true)  x  found  else  not  found  
+*the vector must be sorted*
+
+sort(vec.begin(),vec.end()) ---------- sorts the vector
+reverse(vec.begin(),vec.end()) ----- reverses the vector
+
+Comparing By Second Element
+bool comp(pair<int,int>a,pair<int,int>b)
+{
+    if(a.second!=b.second)
+        return a.second<b.second;
+    else
+        return a.first>b.first;
+}
+
+LIST
+list<int>lst
+Concrating list
+lst.splice(lst.end(),lst2)
+
+SET
+set<int>st;
+set<int>::iterator it;
+***Elements of SET are DISTINCT***
+it ------------------------- a pointer to set’s elements
+it=st.begin() --------- iterator pointing to set’s first element
+it=st.end() ----------- iterator pointing to set’s end
+
+set<int>::reverse_iterator it;
+it=st.rbegin() ------- iterator pointing to set’s reversly first (last) element
+it=st.rend() --------- iterator pointing to set’s reversly last (first) element
+st.erase(it) --------- removes the element where iterator is pointing
+		
+st.erase(it1,it2) --- removes the elements between it1 and it2 (inclusive)
+st.empty() -------- return true is set is empty else returns false
+
+if(st.find(x)==st.end()  x not found  else x found
+
+MULTISET
+multiset<int>ms;
+Same as set
+MAP
+map<int,int>mp
+
+mp.insert(make_pair(a,b))
+mp[a]=b
+***KEYS of MAP are DISTINCT***
+
+map<int,int>::iterator it;
+it=mp.begin() ------- iterator pointing to map’s first key
+it=mp.end() --------- iterator pointing to map’s last key
+it->first --------------- key of the iterator
+it->second ---------- value of the iterator
+
+mp.clear() ---------- clear the map
+
+mp.erase(it) --------- erase by iterator
+mp.erase(3) --------- erase by key
+mp.erase (it1,it2) – erase within range (inclusive)
+
+STACK
+stack<int>s
+s.push(a) ---------- push a at the top of the stack
+s.top() ------------- returns the top element of the stack
+s.pop() ------------ removes the top element of the stack
+s.empty() -------- returns true if stack empty else returns false
+s.size() ----------- returns stack’s size
+
+QUEUE
+queue<int>q
+q.push(a) ------------ push a at the back of the queue
+q.front() ------------- returns the first element of the queue
+q.back() ------------- returns the last element of the queue
+q.pop() -------------- removes the first element of the queue
+q.empty() ---------- returns true if queue empty else returns false
+q.size() -------------- returns queue’s size
+
+PRIORITY QUEUE
+priority_queue<int>pq
+Same as queue 
+Soritng queue in descending order
+
+
+
+DEQUE
+deque<int>dq
+dq.push_front(a) ----------- push a at front of the deque
+dq.push_back(a) ----------- push a at back of the deque
+dq.at(x) ----------------------- returns the xth element
+dq.front() -------------------- returns the first element
+dq.back() -------------------- returns the last element
+dq.pop_front() ------------- removes the first element
+dq.pop_back() ------------- removes the last element
+
