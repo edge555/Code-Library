@@ -25,7 +25,7 @@ struct Bigint
         vl=0;
         int i,q,stPos=0,num=0;
         if(!str.empty() && str[0]=='-')
-        {2
+        {
             stPos=1;
             s=-1;
         }
@@ -77,7 +77,7 @@ struct Bigint
         if(s==-1)
             putchar('-');
         printf("%d",back());
-        for(i=len()-2;i>=0;i--)
+        for(int i=len()-2;i>=0;i--)
             printf("%.4d",v[i]);
     }
     friend std::ostream& operator<<(std::ostream& out,const Bigint &a)
@@ -90,7 +90,7 @@ struct Bigint
         if(a.s==-1)
             out<<"-";
         out<<a.back();
-        for(i=a.len()-2;i>=0;i--)
+        for(int i=a.len()-2;i>=0;i--)
         {
             char str[10];
             snprintf(str,5,"%.4d",a.v[i]);
@@ -106,7 +106,7 @@ struct Bigint
             return-(-*this).cp3(-b);
         if(len()!= b.len())
             return len()-b.len();
-        for(i=len()-1;i>=0;i--)
+        for(int i=len()-1;i>=0;i--)
         {
             if(v[i]!=b.v[i])
                 return v[i]-b.v[i];
@@ -138,7 +138,7 @@ struct Bigint
         if(b.s==-1)
             return (*this)-(-b);
         Bigint r;
-        int nl=max(len(),b.len());
+        int i,nl=max(len(),b.len());
         r.resize(nl+1);
         rep0(i,nl)
         {
@@ -165,6 +165,7 @@ struct Bigint
             return -(b-(*this));
         Bigint r;
         r.resize(len());
+        int i;
         rep0(i,len())
         {
             r.v[i]+=v[i];
@@ -184,6 +185,7 @@ struct Bigint
         Bigint r;
         r.resize(len()+b.len()+1);
         r.s=s*b.s;
+        int i,j;
         rep0(i,len())
         {
             rep0(j,b.len())
