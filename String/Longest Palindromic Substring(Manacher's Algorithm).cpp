@@ -1,54 +1,30 @@
-string a;
-int min(int a,int b)
-{
-    int res=a;
-    if(b<a)
-        res=b;
-    return res;
-}
-void findLongestPalindromicString()
-{
-    int N=a.size();
-    if(N==0)
-        return;
-    N=2*N+1;
-    int L[N];
-    L[0]=0;
-    L[1]=1;
-    int C=1,R=2,i=0;
-    int iMirror,maxLPSLength=0,maxLPSCenterPosition=0;
-    int start=-1,endd=-1,diff=-1;
-
-    for (i=2;i<N;i++)
+class Solution {
+public:
+    string manachar(string s)
     {
-        iMirror=2*C-i;
-        L[i]=0;
-        diff=R-i;
-        if(diff>0)
-            L[i]=min(L[iMirror],diff);
-        while ( ( (i+L[i])<N && (i-L[i])>0) && ( ( (i+L[i] +1)%2==0) ||
-            (a[(i+L[i]+1)/2]==a[(i-L[i]-1)/2]) ) )
-           {
-                L[i]++;
-           }
-        if(L[i]>maxLPSLength)
+        string T;
+        for(int i=0;i<s.size();i++)
+            T+="#"+s.substr(i,1);
+        T.push_back('#');
+        vector<int>P(T.size(),0);
+        int center=0,boundary=0,maxLen=0,resCenter=0;
+        for(int i=1;i<T.size()-1;i++)
         {
-            maxLPSLength=L[i];
-            maxLPSCenterPosition=i;
+            int iMirror=2*center-i;
+            P[i]=(boundary>i)?min(boundary-i,P[iMirror]):0;
+            while(i-1-P[i]>=0 && i+1+P[i]<=T.size()-1 && T[i+1+P[i]]==T[i-1-P[i]])
+                P[i]++;
+            if(i+P[i]>boundary)
+            {
+                center=i;
+                boundary=i+P[i];
+            }
+            if(P[i]>maxLen)
+            {
+                maxLen = P[i];
+                resCenter = i;
+            }
         }
-        if (i+L[i]>R)
-        {
-            C=i;
-            R=i+L[i];
-        }
+        return s.substr((resCenter-maxLen)/2,maxLen);
     }
-    start=(maxLPSCenterPosition-maxLPSLength)/2;
-    endd=start+maxLPSLength-1;
-    a=a.substr(start,endd);
-    cout<<a<<endl;
-}
-int main()
-{
-    cin>>a;
-    findLongestPalindromicString();
-}
+};
