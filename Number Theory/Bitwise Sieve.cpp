@@ -3,6 +3,10 @@ const int LMT=10000;
 int flag[MAX>>6];
 #define chkbit(x) (flag[x>>6]&(1<<((x>>1)&31)))
 #define setbit(x) (flag[x>>6]|=(1<<((x>>1)&31)))
+bool prime(int n)
+{
+    return (n&1 && n!=1 && !chkbit(n)) || n==2;
+}
 void sieve()
 {
     long long int i,j,k;
@@ -14,6 +18,5 @@ void sieve()
                 setbit(j);
         }
     }
-    printf("2\n");
-    /// if(!chkbit(i))=prime
+    /// if(prime(i))=prime
 }
