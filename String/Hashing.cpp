@@ -1,4 +1,4 @@
-map<ll,int>mp;
+unordered_map<ll,bool>mp;
 ll gethash(string ar)
 {
     ll p=10003193;
@@ -10,8 +10,9 @@ ll gethash(string ar)
     }
     return hsh;
 }
-int main(void)
+int main()
 {
+    FAST;
     int n,m,i;
     cin>>n;
     ll p=10003193;
@@ -20,7 +21,7 @@ int main(void)
         string a;
         cin>>a;
         ll now=gethash(a);
-        mp[now]=1;
+        mp[now]=true;
     }
     cin>>m;
     while(m--)
@@ -28,6 +29,6 @@ int main(void)
         string s;
         cin>>s;
         ll now=gethash(s);
-        // if(mp.find(now)!=mp.end()) = yes
+        if(mp[now]) -> Yes
     }
 }
