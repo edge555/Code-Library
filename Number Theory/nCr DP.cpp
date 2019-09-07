@@ -1,18 +1,13 @@
-ll dp[N][N];
-ll nCr(int n,int r)
+ll nCr(int n,int k)
 {
-    if(r==1)
-        return n;
-    if(r==n)
-        return 1;
-    if(dp[n][r]!=-1)
-        return dp[n][r];
-    else
+    ll dp[k+1];
+    mem(dp,0);
+    dp[0]=1;
+    int i,j;
+    for(i=1;i<=n;i++)
     {
-        dp[n][r]=nCr(n-1,r)+nCr(n-1,r-1);
-        return dp[n][r];
+        for(j=min(i,k);j>0;j--)
+            dp[j]+=dp[j-1];
     }
+    return dp[k];
 }
-main:
-    mem(dp,-1);
-    cout<<nCr(n,r);
