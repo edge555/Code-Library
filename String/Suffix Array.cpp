@@ -64,7 +64,7 @@ void Sort()
         if(idx<0)
             continue;
         idx=sufRank[stp-1][idx];
-        intx=sum[idx];
+        int x=sum[idx];
         tmp[x+cnt[idx]]=suffix[i]-mv;
         cnt[idx]++;
     }
