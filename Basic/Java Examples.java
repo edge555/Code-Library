@@ -3,6 +3,36 @@ import java.lang.*;
 import java.math.*;
 
 class Main {
+	/*
+	// Comparator
+	static  class  solve{
+        int c;
+        int d;
+    }
+    static  class exam implements Comparator<exam> {
+        int c;
+        int l;
+        int d;
+
+        public exam(int a, int b, int e) {
+             this.c = a;
+             this.l = b;
+             this.d = e;
+        }
+
+        @Override
+        public int compare(exam o1, exam o2) {
+            if(o2.d>o1.d){
+                return -1;
+            }else if(o1.d==o2.d){
+                if (o2.c<o1.d){
+                    return -1;
+                }
+            }
+            return 0;
+        }
+   }
+	*/
 	public static void main (String[] args) {
 		System.out.printf("%.2f", 0.12345);
 		

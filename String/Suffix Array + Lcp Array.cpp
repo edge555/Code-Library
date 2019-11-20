@@ -75,7 +75,7 @@ void build_LCP()
     rep0(i,n)
         LCP[i]=PLCP[SA[i]];
 }
- int main()
+int main()
 {
     int t,tc;
     sf(tc);
