@@ -1,4 +1,4 @@
-class Solution {
+class Manachar{
 public:
     string manachar(string s)
     {

@@ -1,6 +1,6 @@
 VECTOR
 vector<int>vec;
-vector<int>vec(n,value); ------ vector will have n amount value
+vector<int>vec(n,x); ------ vector will have n amount of x
 vector<int>vec{10,20,30};
 
 vec.push_back(a)  ---- pushing a at the end of vector
@@ -29,7 +29,7 @@ vec.empty() ---------- return true is vector is empty else returns false
 it=find(vec.begin(),vec.end(),x)
 if (it!=vec.end()) x found, else x not found
 
-if(binary_search(vec.begin(),vec.end(),x)==true)  x  found  else  not  found  
+if(binary_search(vec.begin(),vec.end(),x)==true)  x found  else  not  found  
 *the vector must be sorted*
 
 sort(vec.begin(),vec.end()) ---------- sorts the vector
@@ -46,8 +46,8 @@ bool comp(pair<int,int>a,pair<int,int>b)
 
 LIST
 list<int>lst
-Concrating list
-lst.splice(lst.end(),lst2)
+Same as vector but can't be accessed randomly.
+Concrating list : lst.splice(lst.end(),lst2)
 
 SET
 set<int>st;
@@ -89,7 +89,7 @@ mp.erase (it1,it2) –-- erase within range (inclusive)
 
 STACK
 stack<int>s
-s.push(a) ---------- push a at the top of the stack
+s.push(x) ---------- push x at the top of the stack
 s.top() ------------ returns the top element of the stack
 s.pop() ------------ removes the top element of the stack
 s.empty() ---------- returns true if stack empty else returns false
@@ -97,7 +97,7 @@ s.size() ----------- returns stack’s size
 
 QUEUE
 queue<int>q
-q.push(a) ------------ push a at the back of the queue
+q.push(x) ------------ push x at the back of the queue
 q.front() ------------ returns the first element of the queue
 q.back() ------------- returns the last element of the queue
 q.pop() -------------- removes the first element of the queue
@@ -105,8 +105,9 @@ q.empty() ------------ returns true if queue empty else returns false
 q.size() ------------- returns queue’s size
 
 PRIORITY QUEUE
-priority_queue<int>pq
-Same as queue 
+priority_queue<int>pq ---------------------------- Max Heap (Max element on top)
+priority_queue<int,vector<int>,greater<int> >pq -- Min Heap (Min element on top)
+Same as queue
 ***Manual Comparator***
 struct comp { 
     bool operator()(Node const& n1, Node const& n2) 
@@ -117,11 +118,10 @@ priority_queue<Node,vector<Node>,comp>pq;
 
 DEQUE
 deque<int>dq
-dq.push_front(a) ---------- push a at front of the deque
-dq.push_back(a) ----------- push a at back of the deque
-dq.at(x) -------------------returns the xth element
+dq.push_front(x) ---------- push x at front of the deque
+dq.push_back(x) ----------- push x at back of the deque
+dq.at(x) -------------------returns the x'th element
 dq.front() ---------------- returns the first element
 dq.back() ----------------- returns the last element
 dq.pop_front() ------------ removes the first element
 dq.pop_back() ------------- removes the last element
-

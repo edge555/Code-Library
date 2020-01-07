@@ -1,41 +1,21 @@
-string a,b;
-string lcs(string X, string Y)
+int lps(string str)
 {
-    int m=X.length(),n=Y.length();
-    int L[m+1][n+1],i,j;
-    for (i=0;i<=m;i++)
+    int i,k,n=str.size();
+    int L[n][n];
+    rep0(i,n)
+        L[i][i]=1;
+    for(int k=2;k<=n;k++)
     {
-        for (j=0;j<=n;j++)
+        for(i=0;i<n-k+1;i++)
         {
-            if (i==0 || j==0)
-                L[i][j]=0;
-            else if (X[i-1]==Y[j-1])
-                L[i][j]=L[i-1][j-1]+1;
+            int j=i+k-1;
+            if(str[i]== str[j] && k==2)
+                L[i][j]=2;
+            else if(str[i]==str[j])
+                L[i][j]=L[i+1][j-1]+2;
             else
-                L[i][j]=max(L[i-1][j],L[i][j-1]);
+                L[i][j]=max(L[i][j-1],L[i+1][j]);
         }
     }
-    int index=L[m][n], i=m,j=n;
-    string lcs(index+1,'\0');
-    while (i>0 && j>0)
-    {
-        if (X[i-1]==Y[j-1])
-        {
-            lcs[index-1]=X[i-1];
-            i--;
-            j--;
-            index--;
-        }
-        else if (L[i-1][j]>L[i][j-1])
-            i--;
-        else
-            j--;
-    }
-    return lcs;
-}
-int main()
-{
-    cin>>a;
-    b=reverse(all(a));
-    cout<lcs(a,b);
+    return L[0][n-1];
 }
