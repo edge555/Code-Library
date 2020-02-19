@@ -1,5 +1,5 @@
 vector<int>grid[N];
-map<int,int>indeg;
+unordered_map<int,int>indeg;
 queue<int>q;
 priority_queue<int,vector<int>,greater<int> >pq;
 void topsort(int n)
@@ -26,7 +26,7 @@ void topsort(int n)
 }
 int main()
 {
-    int n,m, i,a,k,b;
+    int n,m,i,a,k,b;
     sff(n,m);
     rep0(i,m)
     {
@@ -46,3 +46,4 @@ int main()
         pf(" %d",q.front());
         q.pop();
     }
+}
