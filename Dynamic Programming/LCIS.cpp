@@ -1,4 +1,4 @@
-int LCIS(int arr1[],int n,int arr2[],int m)
+void LCIS(int arr1[],int n,int arr2[],int m)
 {
     int table[m],parent[m],i,j;
     for(j=0;j<m;j++)
@@ -8,11 +8,11 @@ int LCIS(int arr1[],int n,int arr2[],int m)
         int current=0,last=-1;
         for(j=0;j<m;j++)
         {
-            if (arr1[i]==arr2[j])
+            if(arr1[i]==arr2[j])
             {
-                if (current+1>table[j])
+                if(current+1>table[j])
                 {
-                    table[j]=current + 1;
+                    table[j]=current+1;
                     parent[j]=last;
                 }
             }
@@ -20,29 +20,28 @@ int LCIS(int arr1[],int n,int arr2[],int m)
             {
                 if(table[j]>current)
                 {
-                    current=table[j]; last=j;
+                    current=table[j];
+                    last=j;
                 }
             }
         }
-}
- int result=0,index=-1;
- for(i=0;i<m;i++)
- {
-       if(table[i]>result)
-       {
-           result=table[i];
-           index=i;
+    }
+    int result=0,index=-1;
+    for(i=0;i<m;i++)
+    {
+        if(table[i]>result)
+        {
+            result=table[i];
+            index=i;
         }
- }
- int lcis[result];
- for(i=0;index!=-1;i++)
-{
+    }
+    int lcis[result];
+    for(i=0;index!=-1;i++)
+    {
         lcis[i]=arr2[index];
         index=parent[index];
-}
-cout<<"The LCIS is : ";
-for(i=result-1;i>=0;i--)
+    }
+    pf("%d\n",result);
+    for(i=result-1;i>=0;i--)
         printf ("%d ",lcis[i]);
-    return result;
-    //result = LCIS
 }
