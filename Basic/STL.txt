@@ -66,9 +66,15 @@ it=st.rbegin() ------- iterator pointing to set’s reversly first (last) element
 it=st.rend() --------- iterator pointing to set’s reversly last (first) element
 if(st.find(x)==st.end()  x not found  else x found
 
+UNORDERED SET
+unordered_set<int>s
+Same as set
+Elements are not sorted
+
 MULTISET
 multiset<int>ms;
 Same as set
+Allows duplicate element
 
 MAP
 map<int,int>mp
@@ -86,6 +92,15 @@ mp.clear() ----------- clear the map
 mp.erase(it) --------- erase by iterator
 mp.erase(num) -------- erase by key
 mp.erase (it1,it2) –-- erase within range (inclusive)
+
+UNORDERED MAP
+unordered_map<int,int>mp
+unordered_map<int,int>::iterator it
+Same as Map 
+Keys are not sorted
+More faster unordered map:
+mp.reserve(1024)
+mp.max_load_factor(0.25)
 
 STACK
 stack<int>s

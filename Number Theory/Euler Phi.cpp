@@ -14,3 +14,16 @@ ll phi(ll n)
         ret-=ret/n;
     return ret;
 }
+
+int phi[N];
+void genphi()
+{
+    int i,j;
+    rep(i,N-1)
+        phi[i]=i;
+    rep(i,N-1)
+    {
+        for(j=2*i;j<=N-1;j+=i)
+            phi[j]-=phi[i];
+    }
+}
