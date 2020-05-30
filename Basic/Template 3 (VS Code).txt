@@ -1,0 +1,8 @@
+"Template":{
+		"prefix": "b",
+		"body" : "#include <bits/stdc++.h>\n\n#define FAST ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)\n#define pf printf\n#define sc scanf\n#define sf(n) scanf(\"%d\",&n)\n#define sff(n1,n2) scanf(\"%d %d\",&n1,&n2)\n#define sfff(n1,n2,n3) scanf(\"%d %d %d\",&n1,&n2,&n3)\n#define sl(n) scanf(\"%lld\",&n)\n#define sll(n1,n2) scanf(\"%lld %lld\",&n1,&n2)\n#define slll(n1,n2,n3) scanf(\"%lld %lld %lld\",&n1,&n2,&n3)\n#define rep0(i,n) for(i=0;i<n;i++)\n#define rep(i,n) for(i=1;i<=n;i++)\n#define reps(i,a,n) for(i=a;i<=n;i++)\n#define nl puts(\"\");\n#define pb push_back\n#define MOD 1000000007\n#define fi first\n#define se second\n#define N 100005\n#define mem(ara,n) memset(ara,n,sizeof(ara))\n#define memb(ara) memset(ara,false,sizeof(ara))\n#define all(x) (x).begin(),(x).end()\n#define sq(x) ((x)*(x))\n#define sz(x) x.size()\n#define pi pair<int,int>\n#define pii pair<pair<int,int>,pair<int,int> >\n#define line puts(\"-------\");\n#define db(x) cout<<#x<<\" :: \"<<x<<endl;\n#define dbb(x,y) cout<<#x<<\" :: \"<<x<<\"\t\"<<#y<<\" :: \"<<y<<endl;\n#define fr freopen(\"input.txt\",\"r\",stdin);\n#define fw freopen(\"output.txt\",\"w\",stdout);\ntypedef long long int ll;\nusing namespace std;\nint main()\n{\n\n}"
+	},
+	"Test case":{
+		"prefix": "tc",
+		"body": "int t,tc;\nsf(tc);\nrep(t,tc)\n{\n\n}"
+	}
