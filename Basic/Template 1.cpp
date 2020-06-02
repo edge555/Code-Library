@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
 
 #define FAST ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define pf printf
@@ -14,10 +16,10 @@
 #define rep0(i,n) for(i=0;i<n;i++)
 #define rep(i,n) for(i=1;i<=n;i++)
 #define reps(i,a,n) for(i=a;i<=n;i++)
-#define pb push_back
 
 #define fi first
 #define se second
+#define pb push_back
 #define all(x) (x).begin(),(x).end()
 #define sq(x) ((x)*(x))
 #define sz(x) x.size()
@@ -35,9 +37,6 @@
 const int N = 100005;
 const int MOD = 1000000007;
 
-using ll = long long;
-using namespace std;
-
 void __print(int x) {cerr << x;} void __print(long x) {cerr << x;}
 void __print(long long x) {cerr << x;} void __print(unsigned x) {cerr << x;}
 void __print(unsigned long x) {cerr << x;} void __print(unsigned long long x) {cerr << x;}
@@ -48,6 +47,12 @@ void __print(bool x) {cerr << (x ? "true" : "false");}
 
 template<typename T, typename V> void __print(const pair<T, V> &x)
 {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
+template<typename T> void __print(const queue<T> &x)
+{queue<T>temp=x;cerr<<"\n-----\n";while(!temp.empty())
+{cerr << temp.front() << endl;temp.pop();}cerr<<"-----\n";}
+template<typename T> void __print(const stack<T> &x)
+{stack<T>temp=x;cerr<<"\n-----\n";while(!temp.empty())
+{cerr << temp.top() << endl;temp.pop();}cerr<<"-----\n";}
 template<typename T> void __print(const T &x)
 {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ ? "," : ""), __print(i); cerr << "}";}
 void _print() {cerr << "]\n";}
@@ -61,8 +66,8 @@ template <typename T, typename... V> void _print(T t, V... v)
 int main()
 {
     #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
+        //freopen("input.txt", "r", stdin);
         //freopen("output.txt","w",stdout);
     #endif
-    
+
 }
