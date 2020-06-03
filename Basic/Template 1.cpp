@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 
 #define FAST ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define pf printf
@@ -34,9 +33,6 @@ using ll = long long;
 #define line puts("-------");
 #define dbb(x) cout<<#x<<" : "<<x<<"\n";
 
-const int N = 100005;
-const int MOD = 1000000007;
-
 void __print(int x) {cerr << x;} void __print(long x) {cerr << x;}
 void __print(long long x) {cerr << x;} void __print(unsigned x) {cerr << x;}
 void __print(unsigned long x) {cerr << x;} void __print(unsigned long long x) {cerr << x;}
@@ -63,11 +59,15 @@ template <typename T, typename... V> void _print(T t, V... v)
     #define db(x...) cerr << "[" << #x << "] = [", _print(x)
 #endif
 
+const int N = 100005;
+const int MOD = 1000000007;
+using ll = long long;
+
 int main()
 {
     #ifndef ONLINE_JUDGE
         //freopen("input.txt", "r", stdin);
         //freopen("output.txt","w",stdout);
     #endif
-
+    
 }
