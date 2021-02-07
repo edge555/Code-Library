@@ -10,6 +10,7 @@ ll mulmod(ll a,ll b,ll c)
     }
     return x%c;
 }
+
 ll fastpow(ll x,ll n,ll MOD)
 {
     ll ret=1;
@@ -22,6 +23,7 @@ ll fastpow(ll x,ll n,ll MOD)
     }
     return ret;
 }
+
 bool isPrime(ll n)
 {
     ll d=n-1;
@@ -52,30 +54,27 @@ bool isPrime(ll n)
     }
     return false;
 }
-ll egcd(ll a,ll b, ll*x,ll *y)
+
+ll modInverse(ll a, ll m)
 {
-    ll x,y,x1,y1,x2,y2,r1,r2,q,r;
-    x2=1;y2=0;
-    x1=0;y1=1;
-    for(r2=a,r1=b;r1!=0;r2=r1,r1=r,x2=x1,y2=y1,x1=x,y1=y)
+    ll m0 = m;
+    ll y = 0, x = 1;
+    if (m == 1)
+      return 0;
+    while (a > 1)
     {
-        q=r2/r1;
-        r=r2%r1;
-        x=x2-(q*x1);
-        y=y2-(q*y1);
+        ll q = a / m;
+        ll t = m;
+        m = a % m, a = t;
+        t = y;
+        y = x - q * y;
+        x = t;
     }
-    *x=x2;*y=y2;
-    return r2;
-}
-ll modinv(ll a,ll m)
-{
-    ll x,y;
-    egcd(a,m,&x,&y);
-    x%=m;
-    if(x<0)
-        x+=m;
+    if (x < 0)
+       x += m0;
     return x;
 }
+
 ll power(ll a,ll p)
 {
     ll res=1,x=a;
@@ -88,6 +87,7 @@ ll power(ll a,ll p)
     }
     return res;
 }
+
 ll bigmod(ll a,ll p,ll m)
 {
     ll res=1%m,x=a%m;
